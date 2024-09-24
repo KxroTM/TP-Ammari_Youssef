@@ -102,15 +102,15 @@ func Ft_non_overlap(intervals [][]int) int {
 
 func Ft_min_window(s string, t string) string {
 	n := len(s)
-	minLen := n + 1
+	ntemp := n
 	result := ""
 
 	for i := 0; i < n; i++ {
 		for j := i; j < n; j++ {
 			sub := s[i : j+1]
 			if check(sub, t) {
-				if len(sub) < minLen {
-					minLen = len(sub)
+				if len(sub) < ntemp {
+					ntemp = len(sub)
 					result = sub
 				}
 			}
